@@ -5,14 +5,21 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="">
 	<style>
+	.container {
+		display: flex;
+		align-items: stretch;
+	}
 	body {
 		margin: 0;
 	}
 	#navbar {
 		float: left;
 		width: 150px;
-		height: 100vh;
+		//height: 100vh;
 		background-color: #a19f9c;
+	}
+	#rightcol {
+		flex: 1;
 	}
 	#footflex {
 		display: flex;
@@ -47,38 +54,41 @@
 	</style>
 </head>
 <body>
-	<div id="navbar">
-	</div>
-	<div id="rightcol">
-		<header>
-			<div id="headflex">
-				<div id="headcol">
-					<h1>Popcorn Village</h1>
+	<div class="container">
+		<div id="navbar">
+		</div>
+		<div id="rightcol">
+			<header>
+				<div id="headflex">
+					<div id="headcol">
+						<h1>Popcorn Village</h1>
+					</div>
+					<div id="headicons">
+						<h4>cart and social</h4>
+					</div>
+					<div id="shortlogin">
+						<h4>login</h4>
+					</div>
 				</div>
-				<div id="headicons">
-					<h4>cart and social</h4>
+			</header>
+			
+			<!--contents-->
+			<div>Sample content</div>
+			
+			<footer>
+				<div id="footflex">
+					<div class="footercol">
+						<i>Copyright &copy; 2022 popcorn@village.com</i>
+					</div>
+					<div class="footercol">
+						<i>social media</i>
+					</div>
+					<div class="footercol">
+						<i>supported payments</i>
+					</div>
 				</div>
-				<div id="shortlogin">
-					<h4>login</h4>
-				</div>
-			</div>
-		</header>
-		
-		<!--contents-->
-		
-		<footer>
-			<div id="footflex">
-				<div class="footercol">
-					<i>Copyright &copy; 2022 popcorn@village.com</i>
-				</div>
-				<div class="footercol">
-					<i>social media</i>
-				</div>
-				<div class="footercol">
-					<i>supported payments</i>
-				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 	</div>
 </body>
 </html>
