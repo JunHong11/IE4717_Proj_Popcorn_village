@@ -14,6 +14,36 @@
 		height: 100vh;
 		background-color: #a19f9c;
 	}
+	#footflex {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		background-color: #696969;
+		color: #ffffff;
+	}
+	.footercol {
+		padding: 10px;
+		text-align: center;
+	}
+	#headflex {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		background-color: #696969;
+		color: #ffffff;
+	}
+	#headcol {
+		flex-grow: 3;
+		padding-left: 10px;
+	}
+	#headicons {
+		flex-grow: 1;
+		text-align: center;
+	}
+	#shortlogin {
+		flex-grow: 1;
+		text-align: center;
+	}
 	</style>
 </head>
 <body>
@@ -21,12 +51,33 @@
 	</div>
 	<div id="rightcol">
 		<header>
-			
+			<div id="headflex">
+				<div id="headcol">
+					<h1>Popcorn Village</h1>
+				</div>
+				<div id="headicons">
+					<h4>cart and social</h4>
+				</div>
+				<div id="shortlogin">
+					<h4>login</h4>
+				</div>
+			</div>
 		</header>
 		
 		<!--contents-->
 		
 		<footer>
+			<div id="footflex">
+				<div class="footercol">
+					<i>Copyright &copy; 2022 popcorn@village.com</i>
+				</div>
+				<div class="footercol">
+					<i>social media</i>
+				</div>
+				<div class="footercol">
+					<i>supported payments</i>
+				</div>
+			</div>
 		</footer>
 	</div>
 </body>
