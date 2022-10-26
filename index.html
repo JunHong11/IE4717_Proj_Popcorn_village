@@ -4,6 +4,7 @@
 	<title>Popcorn Village</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<style>
 	.container {
 		display: flex;
@@ -14,9 +15,25 @@
 	}
 	#navbar {
 		float: left;
-		width: 150px;
-		//height: 100vh;
+		width: 80px;
+		/* height: 100vh; */
 		background-color: #a19f9c;
+		text-align: center;
+	}
+	nav{
+		margin-top: 20px;
+	}
+	nav a{
+		text-decoration: none;
+		color: #000000;
+		font-weight: bold;
+		display: inline-block;
+		margin-bottom: 40px;
+	}
+	nav a p {
+		margin: 0; 
+		font-size: 0.8em;
+		color: #000000;
 	}
 	#rightcol {
 		flex: 1;
@@ -51,12 +68,42 @@
 		flex-grow: 1;
 		text-align: center;
 	}
+	#content{
+		
+	}
 	</style>
 </head>
+
 <body>
 	<div class="container">
 		<div id="navbar">
+			<nav>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">menu</i>
+				</a>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">home</i>
+					<p>Home</p>
+				</a>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">movie</i>
+					<p>Movies</p>
+				</a>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">view_timeline</i>
+					<p>Showtime</p>
+				</a>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">confirmation_number</i>
+					<p>Check Bookings</p>
+				</a>
+				<a href="index.html">
+					<i class="material-icons" style="font-size: 40px;">contact_mail</i>
+					<p>Contact Us</p>
+				</a>
+			</nav>
 		</div>
+		
 		<div id="rightcol">
 			<header>
 				<div id="headflex">
@@ -64,7 +111,10 @@
 						<h1>Popcorn Village</h1>
 					</div>
 					<div id="headicons">
-						<h4>cart and social</h4>
+						<!-- <h4>cart and social</h4> -->
+						<a href="index.html" style="display: inline-block; margin: 20px 0;">
+							<i class="material-icons" style="font-size: 30px; color: #000000;">shopping_cart</i>
+						</a>
 					</div>
 					<div id="shortlogin">
 						<h4>login</h4>
@@ -73,7 +123,9 @@
 			</header>
 			
 			<!--contents-->
-			<div>Sample content</div>
+			<div id="content">
+				Sample content
+			</div>
 			
 			<footer>
 				<div id="footflex">
