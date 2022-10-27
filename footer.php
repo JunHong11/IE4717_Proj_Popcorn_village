@@ -1,5 +1,4 @@
-</div>
-
+<!--end of contents-->
 <footer>
     <div id="footflex">
         <div class="footercol">
@@ -13,8 +12,5 @@
         </div>
     </div>
 </footer>
-</div>
-</div>
-</body>
-
-</html>
+</div> <!--close rightcol div-->
+</div> <!--close container div-->
