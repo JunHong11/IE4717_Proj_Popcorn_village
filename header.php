@@ -1,25 +1,25 @@
 <div class="container">
 	<nav>
-		<a href="index.html">
+		<a href="index.php">
 			<i class="material-icons" style="font-size: 40px;">menu</i>
 		</a>
-		<a href="index.html">
+		<a href="index.php">
 			<i class="material-icons" style="font-size: 40px;">home</i>
 			<p>Home</p>
 		</a>
-		<a href="index.html">
+		<a href="index.php">
 			<i class="material-icons" style="font-size: 40px;">movie</i>
 			<p>Movies</p>
 		</a>
-		<a href="index.html">
+		<a href="index.php">
 			<i class="material-icons" style="font-size: 40px;">view_timeline</i>
 			<p>Showtime</p>
 		</a>
-		<a href="index.html">
+		<a href="index.php">
 			<i class="material-icons" style="font-size: 40px;">confirmation_number</i>
 			<p>Check Bookings</p>
 		</a>
-		<a href="index.html">
+		<a href="contactus.php">
 			<i class="material-icons" style="font-size: 40px;">contact_mail</i>
 			<p>Contact Us</p>
 		</a>
