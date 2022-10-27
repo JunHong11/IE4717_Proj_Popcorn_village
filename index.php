@@ -86,18 +86,21 @@
                 <div class="feature-flex-item">
                     <a href="">
                         <img src="https://media.gv.com.sg/imagesresize/img3135.jpg">
+                        <p>Title Name</p>
                     </a>
                 </div>
 
                 <div class="feature-flex-item">
                     <a href="">
                         <img src="https://media.comicbook.com/2017/10/thor-movie-poster-marvel-cinematic-universe-1038890.jpg">
+                        <p>Title Name</p>
                     </a>
                 </div>
 
                 <div class="feature-flex-item">
                     <a href="">
                         <img src="https://images.nintendolife.com/d75c7f6b04a67/super-mario-bros-movie-everything-we-know.900x.jpg">
+                        <p>Title Name</p>
                     </a>
                 </div>
 
