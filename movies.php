@@ -17,8 +17,8 @@
                 movieitems[i].onclick = function() {
                     //alert(this.dataset.movieid);
                     document.getElementById("movieid_selected").value = this.dataset.movieid;
-                    //document.getElementById("movie_selection_form").submit();
-                    alert(document.getElementById("movieid_selected").value);
+                    document.getElementById("movie_selection_form").submit();
+                    //alert(document.getElementById("movieid_selected").value);
                 }
             }
         });

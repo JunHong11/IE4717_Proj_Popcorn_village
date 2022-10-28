@@ -19,7 +19,7 @@
 			<i class="material-icons" style="font-size: 30px;">confirmation_number</i>
 			<p>Check Bookings</p>
 		</a>
-		<a href="contactus.php">
+		<a href="contact_us.php">
 			<i class="material-icons" style="font-size: 30px;">contact_mail</i>
 			<p>Contact Us</p>
 		</a>
