@@ -52,6 +52,8 @@ nav a p {
 .social-flex {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 .social-flex img {
 	width: 1.5em;
