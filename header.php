@@ -7,7 +7,7 @@
 			<i class="material-icons" style="font-size: 30px;">home</i>
 			<p>Home</p>
 		</a>
-		<a href="index.php">
+		<a href="movies.php">
 			<i class="material-icons" style="font-size: 30px;">movie</i>
 			<p>Movies</p>
 		</a>

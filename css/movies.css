@@ -1,0 +1,36 @@
+
+.content-wrapper {
+	margin: 2em auto; 
+	width: 90%;
+	min-width: 800px;
+	max-width: 1000px;
+	background:#a19f9c;
+}
+.feature-flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.feature-flex-item {
+	margin: 10px;
+	flex: 1 0 21%;
+}
+.feature-flex-item img {
+	width: 180px;
+	height: 250px;
+	object-fit: fill;
+	transition: 0.2s ease;
+	display: block;
+	margin: auto;
+}
+.feature-flex-item img:hover {
+	box-shadow: 8px 8px 10px grey;
+}
+.feature-flex-item p {
+	text-align: center;
+	margin: 0;
+}
+.feature-flex-item a {
+	text-decoration: none;
+	color:#000000;
+}
