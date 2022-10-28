@@ -28,19 +28,13 @@
 <body>
     <?php
     # connect to db
-    @$db = new mysqli('localhost', 'root', '', 'popcorn_village');
-
-    # check for db connection error
-    if (mysqli_connect_errno()) {
-        echo 'Error: Could not connect to database.  Please try again later.';
-        exit;
-    }
+    include "dbconnect.php";
 
     if (isset($_POST["coming_soon_btn"])) {
-        $query = 'SELECT movieid, title, thumbnail, release_on FROM movies
+        $query = 'SELECT mid, title, thumbnail, release_on FROM movies
                     WHERE release_on>"' . date("Y-m-d") . '";';
     } else {
-        $query = 'SELECT movieid, title, thumbnail, release_on FROM movies
+        $query = 'SELECT mid, title, thumbnail, release_on FROM movies
                     WHERE release_on<="' . date("Y-m-d") . '";';
     }
 
@@ -71,7 +65,7 @@
                     $row = $result->fetch_assoc();
 
                     echo '<div class="movie-flex-item">
-                            <a href="#" class="movie_select_btn" data-movieid="' . $row["movieid"] . '">
+                            <a href="#" class="movie_select_btn" data-movieid="' . $row["mid"] . '">
                             <img src="' . $row["thumbnail"] . '">
                             <p>' . $row["title"] . '</p>
                             </a>
