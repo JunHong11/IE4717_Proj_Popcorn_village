@@ -5,10 +5,18 @@
             <i>Copyright &copy; 2022 popcorn@village.com</i>
         </div>
         <div class="footercol">
-            <i>social media</i>
+            <div class="social-flex">
+                <i>Follow us: </i>
+                <img style="background-color: #ffffff;" src="social_icons/fb.png">
+                <img src="social_icons/twitter.png">
+                <img src="social_icons/youtube.png">
+                <img src="social_icons/ig.png">
+            </div>
         </div>
         <div class="footercol">
             <i>supported payments</i>
+            <br>
+            <img style="width: 10em;" src="">
         </div>
     </div>
 </footer>

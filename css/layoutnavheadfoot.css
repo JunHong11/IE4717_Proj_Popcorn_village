@@ -49,6 +49,14 @@ nav a p {
 	padding: 10px;
 	text-align: center;
 }
+.social-flex {
+	display: flex;
+	align-items: center;
+}
+.social-flex img {
+	width: 1.5em;
+	margin-left: 0.5em;
+}
 
 #headflex {
 	display: flex;
