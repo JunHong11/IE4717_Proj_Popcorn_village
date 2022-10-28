@@ -9,8 +9,9 @@
 	<style>
 		#contents{
 			margin: 30px auto 0; 
-			width:90%; 
+			width: 80%; 
 			min-width:800px;
+			max-width: 1000px;
 		}
 		.movie-flex-wrapper {
 			display: flex;
@@ -33,6 +34,7 @@
 		.movie-flex-item p {
 			text-align: center; 
 			margin: 0;
+			width: 180px;
 		}
 		.movie-flex-item a {
 			text-decoration: none;
@@ -49,6 +51,20 @@
 			background-color: #979694;
 		}
 	</style>
+	
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event){
+			var movieitems = document.getElementsByClassName("movie_select_btn");
+
+			for(var i = 0; i < movieitems.length; i++){
+				movieitems[i].onclick =  function(){
+					//alert(this.dataset.movieid);		
+					document.getElementById("movieid_selected").value = this.dataset.movieid;
+					document.getElementById("movie_selection_form").submit();
+				}
+			}
+		});
+    </script>
 </head>
 
 <body>
@@ -104,55 +120,55 @@
 					<input type="submit" class="button" id="coming_soon_btn" name="coming_soon_btn" value="Coming Soon">
 				</form>
 
-				<form id="movie_selection_form">
-					<input type="text" value="" hidden>
+				<form id="movie_selection_form" method="post" action="index.html">
+					<input type="text" id="movieid_selected" name="movieid_selected" value="" hidden>
 				</form>
 
 				<div class="movie-flex-wrapper">
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="1">
 							<img src="https://media.gv.com.sg/imagesresize/img3135.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="2">
 							<img src="https://media.comicbook.com/2017/10/thor-movie-poster-marvel-cinematic-universe-1038890.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="3">
 							<img src="https://images.nintendolife.com/d75c7f6b04a67/super-mario-bros-movie-everything-we-know.900x.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="4">
 							<img src="https://movies.universalpictures.com/media/halloweenends-poster-560x880-6307e4fdcc4c1-1.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="5">
 							<img src="https://media.comicbook.com/2017/10/thor-movie-poster-marvel-cinematic-universe-1038890.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="6">
 							<img src="https://images.nintendolife.com/d75c7f6b04a67/super-mario-bros-movie-everything-we-know.900x.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="7">
 							<img src="https://movies.universalpictures.com/media/halloweenends-poster-560x880-6307e4fdcc4c1-1.jpg">
 							<p>Title Name</p>
 						</a>
 					</div>
 					<div class="movie-flex-item">
-						<a href="#" class="movie_select_btn" data-id="">
+						<a href="#" class="movie_select_btn" data-movieid="8">
 							<img src="https://media.gv.com.sg/imagesresize/img3135.jpg">
 							<p>Title Name</p>
 						</a>

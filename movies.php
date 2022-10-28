@@ -2,68 +2,88 @@
 <html lang="en">
 
 <head>
-    <title>Movies</title>
+    <title>Popcorn Village Example2</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/layoutnavheadfoot.css">
     <link rel="stylesheet" href="css/movies.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <!-- Set handler for anchor onclick -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var movieitems = document.getElementsByClassName("movie_select_btn");
+
+            for (var i = 0; i < movieitems.length; i++) {
+                movieitems[i].onclick = function() {
+                    //alert(this.dataset.movieid);
+                    document.getElementById("movieid_selected").value = this.dataset.movieid;
+                    //document.getElementById("movie_selection_form").submit();
+                    alert(document.getElementById("movieid_selected").value);
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
+    <?php
+    # connect to db
+    @$db = new mysqli('localhost', 'root', '', 'popcorn_village');
+
+    # check for db connection error
+    if (mysqli_connect_errno()) {
+        echo 'Error: Could not connect to database.  Please try again later.';
+        exit;
+    }
+
+    if (isset($_POST["coming_soon_btn"])) {
+        $query = 'SELECT movieid, title, thumbnail, release_on FROM movies
+                    WHERE release_on>"' . date("Y-m-d") . '";';
+    } else {
+        $query = 'SELECT movieid, title, thumbnail, release_on FROM movies
+                    WHERE release_on<="' . date("Y-m-d") . '";';
+    }
+
+    $result = $db->query($query);
+    $result_num_rows = $result->num_rows;
+    $db->close();
+    ?>
+
     <?php include "header.php"; ?>
 
     <!--contents-->
     <div id="contents">
-        <div class="content-wrapper">
-            <div class="feature-flex-container">
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg">
-                        <p>Spider-Man: No way Home</p>
-                    </a>
-                </div>
+        <form action="movies.php" method="post" id="movies_form">
+            <input type="submit" class="button" id="now_showing_btn" name="now_showing_btn" value="Now Showing">
+            <input type="submit" class="button" id="coming_soon_btn" name="coming_soon_btn" value="Coming Soon">
+        </form>
 
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://www.posterhub.com.sg/images/detailed/129/111834_Top_Gun_Maverick_Final.jpeg">
-                        <p>Top Gun: Maverick</p>
-                    </a>
-                </div>
+        <!-- used for passing the movie id to the movie details page -->
+        <form id="movie_selection_form" method="post" action="movie_details.php">
+            <input type="text" id="movieid_selected" name="movieid_selected" value="" hidden>
+        </form>
 
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://images.nintendolife.com/d75c7f6b04a67/super-mario-bros-movie-everything-we-know.900x.jpg">
-                        <p>Title Name</p>
-                    </a>
-                </div>
-                <!--insert query to database here-->
-                <!--replace variables wif those from query to display for after query-->
-                <?php
-                for ($i = 0; $i < 3; $i++) {
-                    echo '
-                    <div class="feature-flex-item">
-                        <a href="">
-                            <img src="https://st.depositphotos.com/1144687/2205/i/950/depositphotos_22055483-stock-photo-blank-poster.jpg">
-                            <p>Sample</p>
-                        </a>
-                    </div>
-                         ';
+        <div class="movie-flex-wrapper">
+            <?php
+            // movie item loop
+            if ($result_num_rows != 0) {
+                for ($i = 0; $i < $result_num_rows; $i++) {
+                    $row = $result->fetch_assoc();
+
+                    echo '<div class="movie-flex-item">
+                            <a href="#" class="movie_select_btn" data-movieid="' . $row["movieid"] . '">
+                            <img src="' . $row["thumbnail"] . '">
+                            <p>' . $row["title"] . '</p>
+                            </a>
+                         </div>';
                 }
-                ?>
-                <!--end of loop-->
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://st.depositphotos.com/1144687/2205/i/950/depositphotos_22055483-stock-photo-blank-poster.jpg">
-                        <p>Sample</p>
-                    </a>
-                </div>
-            </div>
+            }
+            ?>
         </div>
     </div>
-    <!--end of contents-->
 
     <?php include "footer.php"; ?>
+    <?php $result->free(); ?>
 </body>
 
 </html>
