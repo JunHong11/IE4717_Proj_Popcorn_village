@@ -1,0 +1,28 @@
+#contents {
+	margin: 30px auto 0; 
+	width: 80%; 
+	min-width:800px;
+	max-width: 1200px;
+}
+.cart_display a {
+    color: #000000;
+}
+.cart_display table{
+    width: 100%;
+    margin: auto;
+}
+thead{
+	background-color: #d3d3d3;
+}
+tbody tr:nth-of-type(odd) {
+	background-color: #e9e8e8;
+}
+.payment_details {
+    
+}
+.payment_details h4{
+    text-decoration: underline;
+}
+.payment_details input[type="submit"] {
+    
+}

@@ -39,9 +39,16 @@ if (!isset($_SESSION['cart'])) {
 				</div>
 				<div id="headicons">
 					<!-- <h4>cart and social</h4> -->
-					<a href="index.html" style="display: inline-block; margin: 20px 0; text-decoration: none; color:#000000;">
+					<a href="cart.php" style="display: inline-block; margin: 20px 0; text-decoration: none; color:#000000;">
 						<i class="material-icons" style="font-size: 30px; color: #000000;">shopping_cart</i>
-						<span><?php echo count($_SESSION['cart']); ?> items</span>
+						<span><?php
+						$numberitems = 0;
+						for ($i=0; $i<count($_SESSION['cart']); $i++) {
+							$seatslist = explode(" ",$_SESSION['cart'][$i]["selected-seats"]);
+							$numberitems += count($seatslist);
+						}
+						echo $numberitems; 
+						?> items</span>
 					</a>
 				</div>
 				<div id="headicons">
