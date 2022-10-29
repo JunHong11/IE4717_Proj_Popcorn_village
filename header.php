@@ -15,7 +15,7 @@
 			<i class="material-icons" style="font-size: 30px;">view_timeline</i>
 			<p>Showtime</p>
 		</a>
-		<a href="index.php">
+		<a href="check_bookings.php">
 			<i class="material-icons" style="font-size: 30px;">confirmation_number</i>
 			<p>Check Bookings</p>
 		</a>
@@ -36,16 +36,16 @@
 					<a href="index.html" style="display: inline-block; margin: 20px 0;">
 						<i class="material-icons" style="font-size: 30px; color: #000000;">shopping_cart</i>
 					</a>
-                </div>
-                <div id="headicons">
-                    <br>
-                    <i>Follow us: </i>
-                    <div class="social-flex">  
-                        <img style="background-color: #ffffff;" src="social_icons/fb.png">
-                        <img src="social_icons/twitter.png">
-                        <img src="social_icons/youtube.png">
-                        <img src="social_icons/ig.png">
-                    </div>
+				</div>
+				<div id="headicons">
+					<br>
+					<i>Follow us: </i>
+					<div class="social-flex">
+						<img style="background-color: #ffffff;" src="social_icons/fb.png">
+						<img src="social_icons/twitter.png">
+						<img src="social_icons/youtube.png">
+						<img src="social_icons/ig.png">
+					</div>
 				</div>
 				<div id="shortlogin">
 					<h4>login</h4>
