@@ -11,7 +11,7 @@
 			<i class="material-icons" style="font-size: 30px;">movie</i>
 			<p>Movies</p>
 		</a>
-		<a href="index.php">
+		<a href="showtime.php">
 			<i class="material-icons" style="font-size: 30px;">view_timeline</i>
 			<p>Showtime</p>
 		</a>

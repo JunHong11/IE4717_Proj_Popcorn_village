@@ -44,7 +44,7 @@
                         <th>Synopsis:</th>
                         <td><?php echo $row["sypnosis"]; ?></td>
                         <td style="width:100px; vertical-align: top;">
-                            <form action="showtime.html" method="post" id="book-form">
+                            <form action="showtime.php" method="post" id="book-form">
                                 <input type="text" id="movieid_selected" name="movieid_selected" value="<?php echo $row["mid"]; ?>" hidden>
                                 <input type="submit" id="book-btn" value="Book">
                             </form>
