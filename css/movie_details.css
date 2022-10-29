@@ -35,4 +35,9 @@ caption {
 #book-btn {
     width:100px; 
     height:50px;
+    font-size: 1.1em;
+    background-color: #a5a5a5;
+}
+#book-btn:hover {
+    background-color: #979694;
 }

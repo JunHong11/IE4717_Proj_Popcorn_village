@@ -6,7 +6,7 @@
 .slides-container {
 	display: none;
 	height: 400px;
-	background-color: black;
+	background-color: #121212;
 	text-align: center;
 }
 .slides-container img {
@@ -43,7 +43,7 @@
 	width: 90%;
 	min-width: 800px;
 	max-width: 1000px;
-	background:#a19f9c;
+	background-color:#252525;
 }
 .feature-flex-container {
 	display: flex;
@@ -77,8 +77,9 @@
 .feature-flex-item p {
 	text-align: center; 
 	margin: 0;
+	width: 180px;
 }
 .feature-flex-item a {
 	text-decoration: none;
-	color:#000000;
+	color:#e4e4e4;
 }

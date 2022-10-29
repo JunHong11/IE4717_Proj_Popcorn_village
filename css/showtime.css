@@ -19,7 +19,7 @@
 	background-color: #979694;
 }
 .showtime_container {
-	background-color: #a19f9c;
+	background-color: #252525;
 	/*display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;*/
@@ -47,8 +47,8 @@
 }
 .button_time {
 	border: none;
-	background-color: #72706e;
-	color: #eaeaea;
+	background-color: #a19f9c;
+	color: #121212;
 	/*padding: 8px 40px;*/
 	cursor: pointer;
 	font-size: x-large;

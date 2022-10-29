@@ -28,10 +28,10 @@ td {
 	padding: 10px;
 }
 thead, tfoot {
-	background-color: #d3d3d3;
+	background-color: #121212;
 }
 tbody tr:nth-of-type(odd) {
-	background-color: #e9e8e8;
+	background-color: #313131;
 }
 .cinema-wrapper {
 	text-align: center;
@@ -71,6 +71,11 @@ tbody tr:nth-of-type(odd) {
 	background-color: #9c9c9c;
 }
 #add-btn {
-	width:100px; 
-	height:30px;
+	width:120px; 
+	height:50px;
+	font-size: 1.1em;
+	background-color: #a5a5a5;
+}
+#add-btn:hover {
+	background-color: #979694;
 }

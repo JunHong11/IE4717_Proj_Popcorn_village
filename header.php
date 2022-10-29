@@ -34,21 +34,21 @@ if (!isset($_SESSION['cart'])) {
 	<div id="rightcol">
 		<header>
 			<div id="headflex">
-				<div id="headcol">
+				<a href="index.php">
 					<h1>Popcorn Village</h1>
-				</div>
+				</a>
 				<div id="headicons">
 					<!-- <h4>cart and social</h4> -->
-					<a href="cart.php" style="display: inline-block; margin: 20px 0; text-decoration: none; color:#000000;">
-						<i class="material-icons" style="font-size: 30px; color: #000000;">shopping_cart</i>
+					<a href="cart.php" style="display: inline-block; margin: 20px 0; text-decoration: none;">
+						<i class="material-icons" style="font-size: 30px;">shopping_cart</i>
 						<span><?php
-						$numberitems = 0;
-						for ($i=0; $i<count($_SESSION['cart']); $i++) {
-							$seatslist = explode(" ",$_SESSION['cart'][$i]["selected-seats"]);
-							$numberitems += count($seatslist);
-						}
-						echo $numberitems; 
-						?> items</span>
+								$numberitems = 0;
+								for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+									$seatslist = explode(" ", $_SESSION['cart'][$i]["selected-seats"]);
+									$numberitems += count($seatslist);
+								}
+								echo $numberitems;
+								?> items</span>
 					</a>
 				</div>
 				<div id="headicons">
@@ -66,13 +66,11 @@ if (!isset($_SESSION['cart'])) {
 					if (isset($_SESSION['valid_user'])) {
 						echo '<h2 style="color: #000000;">' . $_SESSION['valid_user'] . '</h2>';
 						echo '<a style="
-							text-decoration: none;
-							color: #ffffff;"
+							text-decoration: none;" 
 							href="logout.php"><h5>Logout</h5></a>';
 					} else {
 						echo '<a style="
-							text-decoration: none;
-							color: #ffffff;"
+							text-decoration: none;" 
 							href="login.php"><h4>Login</h4></a>';
 					}
 					?>

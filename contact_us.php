@@ -5,35 +5,18 @@
     <title>Popcorn Village Example2</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/layoutnavheadfoot.css">
+    <link rel="stylesheet" href="css/contact_us.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <style>
-        table {
-            border-spacing: 0px;
-        }
-
-        th {
-            width: 20%;
-            text-align: left;
-            padding: 10px;
-        }
-
-        td {
-            padding: 10px;
-        }
-
-        thead {
-            background-color: #d3d3d3;
-        }
-    </style>
 </head>
 
 <body>
     <?php include "header.php"; ?>
 
     <div id="contents">
-        <table border="1" style="margin: 30px auto; width: 80%; min-width: 800px;">
-            <caption style="font-size:1.2em; text-align: left;"><b>Contact Us</b></caption>
+        <table border="1">
+            <caption style="text-align: left;">
+                <h2><b>Contact Us</b></h2>
+            </caption>
             <thead>
                 <tr>
                     <th colspan="2">Popcorn Village</th>
