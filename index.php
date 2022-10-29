@@ -22,6 +22,7 @@
 
             document.getElementById("forward").onclick = MoveForward;
             document.getElementById("back").onclick = MoveBack;
+            
         });
 
         function SlideShow(n) {
@@ -58,6 +59,7 @@
             interval = setInterval(MoveForward, ms);
         }
     </script>
+    
 </head>
 
 <body>
@@ -81,36 +83,59 @@
 
         <div class="feature-wrapper">
             <h3 style="margin-left: 10px;"><b>Featured</b></h3>
-            <div class="feature-flex-container">
-                <!-- can use a loop here -->
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://media.gv.com.sg/imagesresize/img3135.jpg">
-                        <p>Title Name</p>
-                    </a>
+            <?php
+            include "dbconnect.php";
+            $featurelist = array('2101','2202','2104','2001');
+            if (isset($_SESSION['valid_user'])) {
+                $userid = $_SESSION['valid_user'];
+                //get featured since login
+                //fetch featured for that user
+                $fetchq = 'SELECT featured FROM users WHERE username="'.$userid.'";';
+                $result = $db->query($fetchq);
+                $row = $result->fetch_assoc();
+                //customised featured if avail
+                if (!empty($row["featured"])) {
+                    //convert string to array
+                    $featurelist = explode(",", $row["featured"]);
+                }
+            }
+            ?>
+            <!-- used for passing the movie id to the movie details page -->
+            <form id="movie_selection_form" method="post" action="movie_details.php">
+                <input type="text" id="movieid_selected" name="movieid_selected" value="" hidden>
+                <div class="feature-flex-container">
+                    <!-- query and display featured movies -->
+                    <?php
+                    for ($i = 0; $i < (sizeof($featurelist)); $i++) {
+                        $query = 'SELECT mid, thumbnail, title FROM movies WHERE mid='.$featurelist[$i].';';
+                        $result = $db->query($query);
+                        $row = $result->fetch_assoc();
+                        echo '<div class="feature-flex-item">
+                            <a href="#" class="movie_select_btn" data-movieid="' . $row["mid"] . '">
+                            <img src="' . $row["thumbnail"] . '">
+                            <p>' . $row["title"] . '</p>
+                            </a>
+                         </div>';
+                    }
+                    ?>
                 </div>
-
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://media.comicbook.com/2017/10/thor-movie-poster-marvel-cinematic-universe-1038890.jpg">
-                        <p>Title Name</p>
-                    </a>
-                </div>
-
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://images.nintendolife.com/d75c7f6b04a67/super-mario-bros-movie-everything-we-know.900x.jpg">
-                        <p>Title Name</p>
-                    </a>
-                </div>
-
-                <div class="feature-flex-item">
-                    <a href="">
-                        <img src="https://movies.universalpictures.com/media/halloweenends-poster-560x880-6307e4fdcc4c1-1.jpg">
-                    </a>
-                </div>
-            </div>
+            </form>
         </div>
+        <!-- Set handler for anchor onclick -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var movieitems = document.getElementsByClassName("movie_select_btn");
+
+                for (var i = 0; i < movieitems.length; i++) {
+                    movieitems[i].onclick = function() {
+                        //alert(this.dataset.movieid);
+                        document.getElementById("movieid_selected").value = this.dataset.movieid;
+                        document.getElementById("movie_selection_form").submit();
+                        //alert(document.getElementById("movieid_selected").value);
+                    }
+                }
+            });
+        </script>
     </div>
     <!--end of contents-->
 

@@ -52,6 +52,19 @@
 .feature-flex-item {
 	margin: 10px;
 }
+.feature-flex-item input[type=submit] {
+	border: 0;
+	width: 180px;
+	height: 250px;
+	object-fit: fill;
+	transition: 0.2s ease;
+	display: block;
+	margin: auto;
+	background-size: 100%;
+}
+.feature-flex-item input {
+	box-shadow: 8px 8px 10px grey;
+}
 .feature-flex-item img {
 	width: 180px;
 	height: 250px;
