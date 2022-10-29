@@ -2,11 +2,9 @@
 	display: flex;
 	align-items: stretch;
 }
-
 body {
 	margin: 0;
 }
-
 nav {
 	position: fixed;
 	float: left;
@@ -17,7 +15,6 @@ nav {
 	display: flex;
 	flex-direction: column;
 }
-
 nav a {
 	padding-top: 1em;
 	text-decoration: none;
@@ -25,18 +22,15 @@ nav a {
 	font-weight: bold;
 	flex-grow: 1;
 }
-
 nav a p {
 	margin: 0;
 	font-size: 0.8em;
 	color: #000000;
 }
-
 #rightcol {
 	flex: 1;
 	margin-left: 80px;
 }
-
 #footflex {
 	display: flex;
 	flex-wrap: nowrap;
@@ -44,7 +38,6 @@ nav a p {
 	background-color: #696969;
 	color: #ffffff;
 }
-
 .footercol {
 	padding: 10px;
 	text-align: center;
@@ -59,7 +52,6 @@ nav a p {
 	width: 1.5em;
 	margin-left: 0.5em;
 }
-
 #headflex {
 	display: flex;
 	flex-wrap: nowrap;
@@ -67,22 +59,22 @@ nav a p {
 	background-color: #696969;
 	color: #ffffff;
 }
-
 #headcol {
 	flex-grow: 3;
 	padding-left: 10px;
 }
-
 #headicons {
 	flex-grow: 1;
 	text-align: center;
 }
-
 #shortlogin {
 	flex-grow: 1;
 	text-align: center;
 }
-
+.logbtn {
+	text-decoration: none;
+	color: #ffffff;
+}
 #contents {
 	min-height: calc(100vh - 135px);
 }

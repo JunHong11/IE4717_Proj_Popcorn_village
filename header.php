@@ -48,7 +48,21 @@
 					</div>
 				</div>
 				<div id="shortlogin">
-					<h4>login</h4>
+					<?php
+						session_start();
+						if (isset($_SESSION['valid_user'])) {
+							echo '<h2 style="color: #000000;">'.$_SESSION['valid_user'].'</h2>';
+							echo '<a style="
+							text-decoration: none;
+							color: #ffffff;"
+							href="logout.php"><h5>Logout</h5></a>';
+						} else {
+							echo '<a style="
+							text-decoration: none;
+							color: #ffffff;"
+							href="login.php"><h4>Login</h4></a>';
+						}
+					?>
 				</div>
 			</div>
 		</header>
