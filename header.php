@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['cart'])) {
+	$_SESSION['cart'] = array();
+}
+?>
 <div class="container">
 	<nav>
 		<a href="index.php">
@@ -33,8 +39,9 @@
 				</div>
 				<div id="headicons">
 					<!-- <h4>cart and social</h4> -->
-					<a href="index.html" style="display: inline-block; margin: 20px 0;">
+					<a href="index.html" style="display: inline-block; margin: 20px 0; text-decoration: none; color:#000000;">
 						<i class="material-icons" style="font-size: 30px; color: #000000;">shopping_cart</i>
+						<span><?php echo count($_SESSION['cart']); ?> items</span>
 					</a>
 				</div>
 				<div id="headicons">
@@ -49,19 +56,18 @@
 				</div>
 				<div id="shortlogin">
 					<?php
-						session_start();
-						if (isset($_SESSION['valid_user'])) {
-							echo '<h2 style="color: #000000;">'.$_SESSION['valid_user'].'</h2>';
-							echo '<a style="
+					if (isset($_SESSION['valid_user'])) {
+						echo '<h2 style="color: #000000;">' . $_SESSION['valid_user'] . '</h2>';
+						echo '<a style="
 							text-decoration: none;
 							color: #ffffff;"
 							href="logout.php"><h5>Logout</h5></a>';
-						} else {
-							echo '<a style="
+					} else {
+						echo '<a style="
 							text-decoration: none;
 							color: #ffffff;"
 							href="login.php"><h4>Login</h4></a>';
-						}
+					}
 					?>
 				</div>
 			</div>

@@ -32,8 +32,26 @@
     }
     ?>
 
-    <?php include "header.php"; ?>
+    <?php
+    include "header.php";
+    // checks if added to cart button is clicked
+    if (isset($_POST["add-btn"])) {
+        $_SESSION['cart'][] = array("selected-seats" => trim($_POST["selected-seats"]), "stid_selected" => $_POST["stid_selected"]);
 
+        // redirects
+        echo '<script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+                    if (confirm("Ticket(s) added to cart! Go to cart?")) {
+                        window.location.replace("cart.php");
+                      } else {
+                        window.location.replace("index.php");
+                      }
+                });
+            </script>';
+    }
+    ?>
+
+    <!--javascript-->
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             var seats = document.getElementsByClassName("seat");
@@ -163,7 +181,7 @@
                     </tfoot>
                 </table>
                 <div style="text-align: right; width: 90%; margin: auto;">
-                    <form action="cart.php" method="post">
+                    <form action="booking.php" method="post">
                         <!-- selected-seats value example "A1 B4 G11 G14 " -->
                         <input type="text" id="selected-seats" name="selected-seats" value="" hidden required>
                         <input type="text" id="stid_selected" name="stid_selected" value="<?php echo $_POST["stid_selected"]; ?>" hidden>
