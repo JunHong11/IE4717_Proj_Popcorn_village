@@ -114,7 +114,7 @@
             <form id="checkout_form" method="post" action="insert_checkout.php">
                 <h4>Payment Details</h4>
                 Name:<br />
-                <input type="text" id="custname" name="custname"><br /><br />
+                <input type="text" id="custname" name="custname" required><br /><br />
                 Email:<br />
                 <!--input type="text" id="email" name="email"><br /><br /-->
                 <?php
@@ -122,15 +122,15 @@
                     $query = 'SELECT email FROM users WHERE username="' . $_SESSION['valid_user'] . '"';
                     $result = $db->query($query);
                     $row = $result->fetch_assoc();
-                    echo '<input type="text" id="email" name="email" value="' . $row["email"] . '"><br /><br />';
+                    echo '<input type="text" id="email" name="email" value="' . $row["email"] . '" required><br /><br />';
                 } else {
-                    echo '<input type="text" id="email" name="email" value=""><br /><br />';
+                    echo '<input type="text" id="email" name="email" value="" required><br /><br />';
                 }
                 ?>
                 Card Number:<br />
-                <input type="text" id="cardno" name="cardno"><br /><br />
+                <input type="text" id="cardno" name="cardno" required><br /><br />
                 <?php
-                echo '<input type="text" id="total" name="total" value=' . number_format($payable, 2) . ' hidden>';
+                echo '<input type="text" id="total" name="total" value=' . number_format($payable, 2) . ' required hidden>';
                 if (isset($_SESSION['valid_user'])) {
                     echo '<input type="text" id="username" name="username" value="' . $_SESSION['valid_user'] . '" hidden>';
                 } else {

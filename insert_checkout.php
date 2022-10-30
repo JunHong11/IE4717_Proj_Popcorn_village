@@ -13,10 +13,15 @@
     <?php
     include "dbconnect.php";
 
-    $dayarr = array('Mon'=>0,'Tues'=>1, 'Wed'=>2, 'Thu'=>3, 'Fri'=>4, 'Sat'=>5, 'Sun'=>6);
+    $dayarr = array('Mon' => 0, 'Tues' => 1, 'Wed' => 2, 'Thu' => 3, 'Fri' => 4, 'Sat' => 5, 'Sun' => 6);
 
     // to change, $cart = $_SESSION['cart'], then remove the 3 lines below
     $cart = $_SESSION['cart'];
+    // check if cart is empty
+    if (empty($cart)) {
+        header('location: cart.php');
+        exit();
+    }
     /*$cart = array();
     $cart[] = array("selected-seats" => "A1 A5 G14 ", "stid_selected" => 210101);
     $cart[] = array("selected-seats" => "A1 B5 F14 ", "stid_selected" => 210103);
@@ -39,7 +44,7 @@
         //this day of week need change
         //$cart[$i]["dayofweek"] = $row["dayofweek"];
         $today = new DateTime(); //todays date 
-        $todayshort= $today->format('D'); //todays day(short) 
+        $todayshort = $today->format('D'); //todays day(short) 
         $targetday = $row["dayofweek"];
         if ($dayarr[$targetday] >= $dayarr[$todayshort]) {
             $daysdiff = $dayarr[$targetday] - $dayarr[$todayshort];
@@ -47,7 +52,7 @@
             $diff = $dayarr[$todayshort] - $dayarr[$targetday];
             $daysdiff = 6 - $dayarr[$todayshort] + $dayarr[$targetday] + 1;
         }
-        $increasedays = '+'.$daysdiff.' days';
+        $increasedays = '+' . $daysdiff . ' days';
         $today->modify($increasedays);
         $cart[$i]["mdate"] = $today->format('Y-m-d');
         $cart[$i]["timeslot"] = $row["timeslot"];
@@ -78,7 +83,7 @@
     //update showtimes with taken seats
     $query = "";
     foreach ($cart as $item) {
-        $query = $query.'UPDATE showtimes SET takenseats=CONCAT(takenseats, " '.$item["selected-seats"].'") WHERE stid='.$item["stid_selected"].';';
+        $query = $query . 'UPDATE showtimes SET takenseats=CONCAT(takenseats, " ' . $item["selected-seats"] . '") WHERE stid=' . $item["stid_selected"] . ';';
     }
     $db->multi_query($query);
     while ($db->next_result());
@@ -94,22 +99,22 @@
         //if no logged in
         session_destroy();
     }
-    
+
     //email
     $to      = $customer_info["email"];
     $subject = 'Receipt for movie tickets';
     $message = '
-    Dear '.$customer_info["custname"].', 
-    You have been charged $'.number_format($customer_info["total"],2).'
+    Dear ' . $customer_info["custname"] . ', 
+    You have been charged $' . number_format($customer_info["total"], 2) . '
     for the following:
-    receipt no: '.$rid;
+    receipt no: ' . $rid;
     foreach ($cart as $item) {
         foreach (explode(" ", $item["selected-seats"]) as $seat_num) {
-            $message = $message .'
-            Movie: '.$item['title'] . ', Seat: ' . $seat_num . ', Date: ' . $item['mdate'] . ', Time: ' . $item['timeslot'] . ';';
+            $message = $message . '
+            Movie: ' . $item['title'] . ', Seat: ' . $seat_num . ', Date: ' . $item['mdate'] . ', Time: ' . $item['timeslot'] . ';';
         }
     }
-    $message = $message.'
+    $message = $message . '
     Enjoy!
 
     Best Wishes,
@@ -119,8 +124,8 @@
         'Reply-To: popcorn_village@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-    mail($to, $subject, $message, $headers,'-popcorn_village@localhost');
-    echo ("mail sent to : ".$to); 
+    mail($to, $subject, $message, $headers, '-popcorn_village@localhost');
+    echo ("mail sent to : " . $to);
 
     //redirect
     echo '<script>
