@@ -38,6 +38,10 @@ nav a {
 	font-weight: bold;
 	flex-grow: 1;
 }
+nav a:hover {
+	color: #aaaaaa;
+	background-color: rgba(0,0,0,0.7);
+}
 nav a p {
 	margin: 0;
 	font-size: 0.75em;
@@ -49,6 +53,7 @@ nav a p {
 	margin-left: 60px;
 }
 footer {
+	font-size: 0.8em;
 	height: 40px;
 }
 #footflex {
@@ -86,9 +91,17 @@ footer {
 	flex-grow: 1;
 	text-align: center;
 }
+#headicons a:hover {
+	color: #aaaaaa;
+	background-color: rgba(0,0,0,0.7);
+}
 #shortlogin {
 	flex-grow: 1;
 	text-align: center;
+}
+#shortlogin a:hover {
+	color: #aaaaaa;
+	background-color: rgba(0,0,0,0.7);
 }
 .logbtn {
 	text-decoration: none;

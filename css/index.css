@@ -62,9 +62,6 @@
 	margin: auto;
 	background-size: 100%;
 }
-.feature-flex-item input {
-	box-shadow: 8px 8px 10px grey;
-}
 .feature-flex-item img {
 	width: 180px;
 	height: 250px;
@@ -72,7 +69,7 @@
 	transition: 0.2s ease;
 }
 .feature-flex-item img:hover {
-	box-shadow: 8px 8px 10px grey;
+	box-shadow: 8px 8px 10px #333333;
 }
 .feature-flex-item p {
 	text-align: center; 
