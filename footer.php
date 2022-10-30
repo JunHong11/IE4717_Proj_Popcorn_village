@@ -2,7 +2,7 @@
 <footer>
     <div id="footflex">
         <div class="footercol">
-            <i>Copyright &copy; 2022 popcorn@village.com</i>
+            <i>Copyright &copy; 2022 popcorn_village@localhost</i>
         </div>
         <div class="footercol">
             <div class="social-flex">

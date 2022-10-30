@@ -115,11 +115,11 @@
     Best Wishes,
     Popcorn Village
     ';
-    $headers = 'From: village@localhost' . "\r\n" .
-        'Reply-To: village@localhost' . "\r\n" .
+    $headers = 'From: popcorn_village@localhost' . "\r\n" .
+        'Reply-To: popcorn_village@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-    mail($to, $subject, $message, $headers,'-village@localhost');
+    mail($to, $subject, $message, $headers,'-popcorn_village@localhost');
     echo ("mail sent to : ".$to); 
 
     //redirect

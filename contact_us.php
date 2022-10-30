@@ -36,7 +36,7 @@
                 <tr>
                     <th>Email:</th>
                     <td>
-                        <a href="mailto:xxx@yyy.com">xxx@yyy.com</a>
+                        <a href="mailto:xxx@yyy">popcorn_village@localhost</a>
                     </td>
                 </tr>
 
