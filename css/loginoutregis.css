@@ -14,12 +14,24 @@ td, th {
 th {
 	text-align: left;
 }
-.login-wrapper {
+.login-wrapper  {
 	width: 50%;
-	height: 200px;
 	border: 1px solid #a5a5a5;
 	display: inline-block;
 }
 table {
 	margin: 45px auto;
+}
+.regis-wrapper td, th {
+	padding: 7px;
+}
+.regis-wrapper tr td {
+	text-align: left;
+}
+.regis-wrapper tr th {
+	width: 120px;
+}
+.regis-wrapper {
+	width: 50%;
+	display: inline-block;
 }

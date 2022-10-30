@@ -34,9 +34,19 @@ if (!isset($_SESSION['cart'])) {
 	<div id="rightcol">
 		<header>
 			<div id="headflex">
-				<a href="index.php">
+				<a style="flex-grow: 10; margin-left: 30px;" href="index.php">
 					<h1>Popcorn Village</h1>
 				</a>
+				<div id="headicons">
+					<br>
+					<i>Follow us: </i>
+					<div class="social-flex">
+						<img style="background-color: #ffffff;" src="social_icons/fb.png">
+						<img src="social_icons/twitter.png">
+						<img src="social_icons/youtube.png">
+						<img src="social_icons/ig.png">
+					</div>
+				</div>
 				<div id="headicons">
 					<!-- <h4>cart and social</h4> -->
 					<a href="cart.php" style="display: inline-block; margin: 20px 0; text-decoration: none;">
@@ -50,16 +60,6 @@ if (!isset($_SESSION['cart'])) {
 								echo $numberitems;
 								?> items</span>
 					</a>
-				</div>
-				<div id="headicons">
-					<br>
-					<i>Follow us: </i>
-					<div class="social-flex">
-						<img style="background-color: #ffffff;" src="social_icons/fb.png">
-						<img src="social_icons/twitter.png">
-						<img src="social_icons/youtube.png">
-						<img src="social_icons/ig.png">
-					</div>
 				</div>
 				<div id="shortlogin">
 					<?php

@@ -3,36 +3,47 @@
 	width: 80%; 
 	min-width:800px;
 	max-width: 1200px;
-	text-align: center;
 }
-.cart_display tbody a {
-    color: #888888;
+.cart_display thead a {
+    color: #e4e4e4;
 }
 .cart_display table{
     width: 100%;
     margin: auto;
 }
+td, th {
+	padding: 5px
+}
 thead{
-	background-color: #d3d3d3;
-}
-thead th{
-	color: #000000;
-}
-thead th a{
-	color: #000000;
+	background-color: #121212;
 }
 tbody {
 	text-align: center;
-	background-color: #373737;
+}
+tbody a {
+	color: #a83535;
+}
+tfoot td, th {
+	padding :8px;
+}
+i:hover {
+	background-color: rgba(0,0,0,0.3);
 }
 tbody tr:nth-of-type(odd) {
-	color:#000000;
-	background-color: #e9e8e8;
+	background-color: #313131;
 }
 .payment_details {
-	display: inline-block;
+	margin: 20px auto;
 }
 .payment_details h4{
     text-decoration: underline;
 }
-
+input[type=text] {
+	width: 300px;
+	height: 28px;
+	margin: 2px auto;
+}
+input[type=submit] {
+	width: 100px;
+	height: 40px;
+}
