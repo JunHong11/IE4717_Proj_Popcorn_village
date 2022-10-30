@@ -11,25 +11,30 @@
 </head>
 
 <body>
-    <?php include "header.php"; 
+    <?php include "header.php";
     ?>
     <!--contents-->
     <div id="contents">
         <?php
-            if (isset($_GET['passing'])) {
-                $passing = $_GET['passing'];
-            }
-            $infoarr = explode(",", $passing); 
-            /*echo $infoarr[0];
+        if (isset($_GET['passing'])) {
+            $passing = $_GET['passing'];
+        }
+        $infoarr = explode(",", $passing);
+        /*echo $infoarr[0];
             echo $infoarr[1];
             echo $infoarr[2];*/
-            $arr = $_SESSION['cart'];
-            $i = array_search(array("selected-seats"=>$infoarr[1], "stid_selected"=>$infoarr[0]), $arr);
-            $temp_arr = explode(" ",$arr[$i]["selected-seats"]);
-            $j_to_del = array_search($infoarr[2], $temp_arr);
-            array_splice($temp_arr, $j_to_del, 1);
+        $arr = $_SESSION['cart'];
+        $i = array_search(array("selected-seats" => $infoarr[1], "stid_selected" => $infoarr[0]), $arr);
+        $temp_arr = explode(" ", $arr[$i]["selected-seats"]);
+        $j_to_del = array_search($infoarr[2], $temp_arr);
+        array_splice($temp_arr, $j_to_del, 1);
+        if (empty($temp_arr)) {
+            array_splice($arr, $i, 1);
+            $_SESSION['cart'] = $arr;
+        } else {
             $_SESSION['cart'][$i]["selected-seats"] = implode(" ", $temp_arr);
-            header('location: cart.php');
+        }
+        header('location: cart.php');
         ?>
     </div>
     <!--end of contents-->
