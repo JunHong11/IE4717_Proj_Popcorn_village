@@ -26,4 +26,12 @@ working accs with discounts and feature recommendation:
 | user2 | P@ssw0rd |
 | demo1 | P@ssw0rd |
 
+you may use any of the emails created for testing checkbooking after u added orders
+currently available emails for check booking:
+|tom@localhost|
+|-------------|
+|xyc@gmail.com|
+|------------|
+|npc@yahoo.sg|
+
 new registered users will have 5% discount, no recommendations yet
