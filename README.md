@@ -31,7 +31,6 @@ currently available emails for check booking:
 |tom@localhost|
 |-------------|
 |xyc@gmail.com|
-|------------|
 |npc@yahoo.sg|
 
 new registered users will have 5% discount, no recommendations yet
