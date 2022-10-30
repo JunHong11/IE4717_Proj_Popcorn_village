@@ -93,6 +93,9 @@ footer {
 	flex-grow: 3;
 	padding-left: 10px;
 }
+#headflex h1 {
+	color: #ffdf61;
+}
 #headicons {
 	flex-grow: 1;
 	text-align: center;

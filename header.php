@@ -34,7 +34,8 @@ if (!isset($_SESSION['cart'])) {
 	<div id="rightcol">
 		<header>
 			<div id="headflex">
-				<a style="flex-grow: 10; margin-left: 30px;" href="index.php">
+				<a style="flex-grow: 10; margin-left: 30px; display: flex; align-items: center;" href="index.php">
+					<img style="width: 50px; height: 50px; background-color: none;" src="popcorn.png">
 					<h1>Popcorn Village</h1>
 				</a>
 				<div id="headicons">
@@ -64,14 +65,14 @@ if (!isset($_SESSION['cart'])) {
 				<div id="shortlogin">
 					<?php
 					if (isset($_SESSION['valid_user'])) {
-						echo '<h3>' . $_SESSION['valid_user'] . '</h3>';
+						echo '<div style="display: flex; align-items: center; justify-content: center;"><i class="material-icons" style="">person</i><h3>' . $_SESSION['valid_user'] . '</h3></div>';
 						echo '<a style="
 							text-decoration: none;" 
 							href="logout.php"><h5><u>Logout</u></h5></a>';
 					} else {
 						echo '<a style="
-							text-decoration: none;" 
-							href="login.php"><h4><u>Login</u></h4></a>';
+							text-decoration: none; display: flex; align-items: center; justify-content: center;" 
+							href="login.php"><i class="material-icons" style="">person</i><h4>Login</h4></a>';
 					}
 					?>
 				</div>

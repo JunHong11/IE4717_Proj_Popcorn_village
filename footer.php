@@ -1,7 +1,7 @@
 <!--end of contents-->
 <footer>
     <div id="footflex">
-        <div class="footercol" style="flex-grow: 10;">
+        <div class="footercol" style="flex-grow: 1;">
             <i>Copyright &copy; 2022 popcorn_village@localhost</i>
         </div>
         <div class="footercol" style="flex-grow: 1;">
