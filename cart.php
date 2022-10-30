@@ -43,7 +43,6 @@
                 </thead>
                 <tbody>
                     <?php
-                        
                         for ($i=0; $i<count($_SESSION['cart']); $i++) {
                             $seatslist = explode(" ",$_SESSION['cart'][$i]["selected-seats"]);
                             //2nd loop to go into the specific seats and create 1 row per seat
@@ -55,7 +54,7 @@
                                 WHERE stid="' . $stid . '"';
                                 $result = $db->query($query);
                                 $row = $result->fetch_assoc();
-                                $movietitle = $row["mid"];
+                                $movietitle = $row["title"];
                                 $price = $row["price"];
                                 $total += $price;
                                 echo '<tr>';
@@ -75,7 +74,7 @@
                 <tfoot>
                 <tr>
                     <th colspan="2" align='right'>Total:</th><br>
-                    <th align='right'>$<?php echo number_format($total, 2); ?>
+                    <th>$<?php echo number_format($total, 2); ?>
                     </th>
                 </tr>
                 <tr>
@@ -88,10 +87,10 @@
                         $hundred = $row["discount"] * 100;
                         $discount = $total * ($row["discount"]);
                         echo '<th colspan="2" align="right">Discount '.$hundred.'%:</th><br>';
-                        echo '<th align="right">-$'.$discount.'</th>';
+                        echo '<th>-$'.$discount.'</th>';
                     } else {
                         echo '<th colspan="2" align="right">Discount:</th><br>';
-                        echo '<th align="right">NA</th>';
+                        echo '<th>NA</th>';
                     }
                     ?>
                     <!--th colspan="2" align='right'>Discount:</th><br>
@@ -102,36 +101,51 @@
                     <?php
                     echo '<th colspan="2" align="right">Total Payable:</th><br>';
                     $payable = $total-$discount;
-                    echo '<th align="right">$'.number_format($payable, 2).'</th>';
+                    echo '<th>$'.number_format($payable, 2).'</th>';
                     ?>
                 </tr>
                 </tfoot>
             </table>
-            <?php $db->close(); ?>
         </div>
 
         
-        <form id="checkout_form" method="post" action="insert_checkout.php">
+        
         <div class="payment_details">
-            <h4>Payment Details</h4>
-            Name:<br />
-            <input type="text" id="custname" name="custname"><br /><br />
-            Email:<br />
-            <input type="text" id="email" name="email"><br /><br />
-            Card Number:<br />
-            <input type="text" id="cardno" name="cardno"><br /><br />
-            <?php
-            echo '<input type="text" id="total" name="total" value='.number_format($payable, 2).' hidden>';
-            if (isset($_SESSION['valid_user'])) {
-                    echo '<input type="text" id="username" name="username" value="'.$_SESSION['valid_user'].'" hidden>';
-                } else {
-                    echo '<input type="text" id="username" name="username" value="" hidden>';
-                }
-            ?>
+            <form id="checkout_form" method="post" action="insert_checkout.php">
+                <h4>Payment Details</h4>
+                Name:<br />
+                <input type="text" id="custname" name="custname"><br /><br />
+                Email:<br />
+                <!--input type="text" id="email" name="email"><br /><br /-->
+                <?php
+                if (isset($_SESSION['valid_user'])) {
+                        $query = 'SELECT email FROM users WHERE username="' .$_SESSION['valid_user']. '"';
+                        $result = $db->query($query);
+                        $row = $result->fetch_assoc();
+                        echo '<input type="text" id="email" name="email" value="'.$row["email"].'"><br /><br />';
+                    } else {
+                        echo '<input type="text" id="email" name="email" value=""><br /><br />';
+                    }
+                ?>
+                Card Number:<br />
+                <input type="text" id="cardno" name="cardno"><br /><br />
+                <?php
+                echo '<input type="text" id="total" name="total" value='.number_format($payable, 2).' hidden>';
+                if (isset($_SESSION['valid_user'])) {
+                        echo '<input type="text" id="username" name="username" value="'.$_SESSION['valid_user'].'" hidden>';
+                    } else {
+                        echo '<input type="text" id="username" name="username" value="" hidden>';
+                    }
+                ?>
 
-            <input type="submit" value="Checkout">
+                <input type="submit" value="Checkout">
+                
+            </form>
+            <?php $db->close(); ?>
+            <br>
+            <br>
         </div>
-        </form>
+        
         <!-- moved to the top right bin in table
             <a href="<?php //echo $_SERVER['PHP_SELF']; ?>?empty=1">Empty your cart</a></p>
         -->
@@ -145,7 +159,7 @@
         });
         function chkemail(event) {
             var myEmail = event.currentTarget;
-            var emailRegexp = /^[^@]+@[^@]+\.[^@]+$/;
+            var emailRegexp = /^[^@]+@localhost$/;
             //check name
             if (emailRegexp.test(myEmail.value) == true) {
 

@@ -3,9 +3,10 @@
 	width: 80%; 
 	min-width:800px;
 	max-width: 1200px;
+	text-align: center;
 }
-.cart_display a {
-    color: #000000;
+.cart_display tbody a {
+    color: #888888;
 }
 .cart_display table{
     width: 100%;
@@ -14,15 +15,24 @@
 thead{
 	background-color: #d3d3d3;
 }
+thead th{
+	color: #000000;
+}
+thead th a{
+	color: #000000;
+}
+tbody {
+	text-align: center;
+	background-color: #373737;
+}
 tbody tr:nth-of-type(odd) {
+	color:#000000;
 	background-color: #e9e8e8;
 }
 .payment_details {
-    
+	display: inline-block;
 }
 .payment_details h4{
     text-decoration: underline;
 }
-.payment_details input[type="submit"] {
-    
-}
+

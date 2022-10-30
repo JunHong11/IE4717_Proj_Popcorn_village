@@ -64,7 +64,7 @@ if (!isset($_SESSION['cart'])) {
 				<div id="shortlogin">
 					<?php
 					if (isset($_SESSION['valid_user'])) {
-						echo '<h2 style="color: #000000;">' . $_SESSION['valid_user'] . '</h2>';
+						echo '<h2 style="color: #ffffff;">' . $_SESSION['valid_user'] . '</h2>';
 						echo '<a style="
 							text-decoration: none;" 
 							href="logout.php"><h5>Logout</h5></a>';
