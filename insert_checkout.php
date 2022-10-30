@@ -86,15 +86,30 @@
     $result->free();
     $db->close();
 
-     // unset and redirects
-     unset($_SESSION['cart']);;
-     echo '<script>
-     document.addEventListener("DOMContentLoaded", function(event) {
-         if (confirm("Tickets Purchased! Go to check bookings?")) {
-             window.location.replace("check_bookings.php");
-           } else {
-             window.location.replace("index.php");
-           }
+    //unset cart
+    unset($_SESSION['cart']);
+    /*email
+    $to      = $customer_info["email"];
+    $subject = 'Receipt for movie tickets';
+    $message = '
+    Dear '.$customer_info["custname"].',\n 
+    You have been charged $'.number_format($customer_info["total"],2).'
+     for the following: ';
+    $headers = 'From: village@localhost' . "\r\n" .
+        'Reply-To: village@localhost' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers,'-village@localhost');
+    echo ("mail sent to : ".$to); */
+
+    //redirect
+    echo '<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        if (confirm("Tickets Purchased! Please Check Email! Go to check bookings?")) {
+            window.location.replace("check_bookings.php");
+        } else {
+            window.location.replace("index.php");
+        }
     });
     </script>';
     ?>

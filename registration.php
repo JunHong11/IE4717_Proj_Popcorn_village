@@ -33,7 +33,7 @@
         
         function chkemail(event) {
             var myEmail = event.currentTarget;
-            var emailRegexp = /^[^@]+@[^@]+\.[^@]+$/;
+            var emailRegexp = /^[^@]+@localhost$/;
             //check name
             if (emailRegexp.test(myEmail.value) == true) {
 

@@ -32,8 +32,8 @@
 		exit;
 	} else {
 		//not exist can insert
-		$sql = "INSERT INTO users (username, passwords, email) 
-		VALUES ('$username', '$password', '$email')";
+		$sql = "INSERT INTO users (username, passwords, email, discount) 
+		VALUES ('$username', '$password', '$email', 0.05)";
 		$insertresult = $db->query($sql); 
 		$db->close();
 		if (!$insertresult) {
