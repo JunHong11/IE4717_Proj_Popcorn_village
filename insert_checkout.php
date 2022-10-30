@@ -26,7 +26,7 @@
 
     // query for mid, dayofweek, timeslot using stid
     for ($i = 0; $i < count($cart) - 1; $i++) {
-        $query = 'SELECT * FROM showtimes WHERE stid="' . $cart[$i]["stid_selected"] . '";';
+        $query = 'SELECT showtimes.*, movies.title FROM showtimes LEFT JOIN movies on showtimes.mid = movies.mid WHERE stid="' . $cart[$i]["stid_selected"] . '";';
 
         $result = $db->query($query);
         //$result_num_rows = $result->num_rows;
@@ -34,6 +34,8 @@
 
         //print_r($row);
         $cart[$i]["mid"] = $row["mid"];
+        //add movie title for emailing
+        $cart[$i]["title"] = $row["title"];
         //this day of week need change
         //$cart[$i]["dayofweek"] = $row["dayofweek"];
         $today = new DateTime(); //todays date 
@@ -88,19 +90,37 @@
 
     //unset cart
     unset($_SESSION['cart']);
-    /*email
+    if (!isset($_SESSION['valid_user'])) {
+        //if no logged in
+        session_destroy();
+    }
+    
+    //email
     $to      = $customer_info["email"];
     $subject = 'Receipt for movie tickets';
     $message = '
-    Dear '.$customer_info["custname"].',\n 
+    Dear '.$customer_info["custname"].', 
     You have been charged $'.number_format($customer_info["total"],2).'
-     for the following: ';
+    for the following:
+    receipt no: '.$rid;
+    foreach ($cart as $item) {
+        foreach (explode(" ", $item["selected-seats"]) as $seat_num) {
+            $message = $message .'
+            Movie: '.$item['title'] . ', Seat: ' . $seat_num . ', Date: ' . $item['mdate'] . ', Time: ' . $item['timeslot'] . ';';
+        }
+    }
+    $message = $message.'
+    Enjoy!
+
+    Best Wishes,
+    Popcorn Village
+    ';
     $headers = 'From: village@localhost' . "\r\n" .
         'Reply-To: village@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     mail($to, $subject, $message, $headers,'-village@localhost');
-    echo ("mail sent to : ".$to); */
+    echo ("mail sent to : ".$to); 
 
     //redirect
     echo '<script>
