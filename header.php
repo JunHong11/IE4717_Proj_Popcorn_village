@@ -7,7 +7,7 @@ if (!isset($_SESSION['cart'])) {
 <div class="container">
 	<nav>
 		<a href="index.php">
-			<i class="material-icons" style="font-size: 30px;">menu</i>
+			<i class="material-icons" style="font-size: 30px; margin-top:10px;">menu</i>
 		</a>
 		<a href="index.php">
 			<i class="material-icons" style="font-size: 30px;">home</i>
@@ -64,14 +64,14 @@ if (!isset($_SESSION['cart'])) {
 				<div id="shortlogin">
 					<?php
 					if (isset($_SESSION['valid_user'])) {
-						echo '<h2 style="color: #ffffff;">' . $_SESSION['valid_user'] . '</h2>';
+						echo '<h3>' . $_SESSION['valid_user'] . '</h3>';
 						echo '<a style="
 							text-decoration: none;" 
-							href="logout.php"><h5>Logout</h5></a>';
+							href="logout.php"><h5><u>Logout</u></h5></a>';
 					} else {
 						echo '<a style="
 							text-decoration: none;" 
-							href="login.php"><h4>Login</h4></a>';
+							href="login.php"><h4><u>Login</u></h4></a>';
 					}
 					?>
 				</div>

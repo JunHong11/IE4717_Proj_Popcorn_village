@@ -54,24 +54,30 @@ nav a p {
 }
 footer {
 	font-size: 0.8em;
-	height: 40px;
+	height: 50px;
 }
 #footflex {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	background-color: #121212;
-	height: 40px;
+	height: 50px;
 }
 .footercol {
 	padding: 10px;
-	text-align: center;
+	text-align: left;
+	line-height: 40px;
 }
-.social-flex {
+.payment-flex img {
+	width: 2.2em;
+	margin-left: 0.5em;
+}
+.social-flex, .payment-flex {
+	width: 100%;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 }
 .social-flex img {
 	width: 1.5em;
@@ -108,7 +114,7 @@ footer {
 	color: #ffffff;
 }
 #contents {
-	min-height: calc(100vh - 110px);
+	min-height: calc(100vh - 115px);
 }
 a {
 	color: #e4e4e4;
