@@ -22,7 +22,16 @@
 
             document.getElementById("forward").onclick = MoveForward;
             document.getElementById("back").onclick = MoveBack;
-            
+
+            // set handler for banner img
+            var bannerimgs = document.getElementsByClassName("banner-img");
+
+            for (var i = 0; i < bannerimgs.length; i++) {
+                bannerimgs[i].onclick = function() {
+                    window.location.href = "movies.php";
+                }
+            }
+
         });
 
         function SlideShow(n) {
@@ -59,7 +68,7 @@
             interval = setInterval(MoveForward, ms);
         }
     </script>
-    
+
 </head>
 
 <body>
@@ -70,11 +79,23 @@
         <div class="carousel">
             <!-- can use a loop here to make more entries -->
             <div class="slides-container">
-                <img src="https://media.gv.com.sg/Booking/movies/images/load/bigimage/blackadam.jpg">
+                <img class="banner-img" src="https://img.freepik.com/free-vector/cinema-cartoon-web-banner-young-mesmerized-girl-with-pop-corn-bucket-sitting-movie-theater_107791-6925.jpg?w=1380&t=st=1667111401~exp=1667112001~hmac=80c3b66921d0b049441860ee401278616ac9d0bfb19055f4f8928adda653ee8b">
             </div>
 
             <div class="slides-container">
-                <img src="https://movies.universalpictures.com/media/03-hwe-dm-mobile-banner-1080x745-pl-f01-082222-630665175d835-1.jpg">
+                <img class="banner-img" src="https://i0.wp.com/highoncinemaa.com/wp-content/uploads/2022/10/Screenshot-50.png?w=1920&ssl=1">
+            </div>
+
+            <div class="slides-container">
+                <img class="banner-img" src="https://yc.cldmlk.com/1t5ej9g3h321ae8wvt5fz2gz64/1664798135166_TheaterWebsiteCarousel15.png">
+            </div>
+
+            <div class="slides-container">
+                <img class="banner-img" src="https://yc.cldmlk.com/1t5ej9g3h321ae8wvt5fz2gz64/1666871572062_TheaterWebsiteCarousel21.png">
+            </div>
+
+            <div class="slides-container">
+                <img class="banner-img" src="https://yc.cldmlk.com/1t5ej9g3h321ae8wvt5fz2gz64/1666265908997_TheaterWebsiteCarousel19.png">
             </div>
 
             <a class="back" id="back">&#10094;</a>
@@ -85,12 +106,12 @@
             <h3 style="margin-left: 10px;"><b>Featured</b></h3>
             <?php
             include "dbconnect.php";
-            $featurelist = array('2101','2202','2104','2001');
+            $featurelist = array('2101', '2202', '2104', '2001');
             if (isset($_SESSION['valid_user'])) {
                 $userid = $_SESSION['valid_user'];
                 //get featured since login
                 //fetch featured for that user
-                $fetchq = 'SELECT featured FROM users WHERE username="'.$userid.'";';
+                $fetchq = 'SELECT featured FROM users WHERE username="' . $userid . '";';
                 $result = $db->query($fetchq);
                 $row = $result->fetch_assoc();
                 //customised featured if avail
@@ -107,7 +128,7 @@
                     <!-- query and display featured movies -->
                     <?php
                     for ($i = 0; $i < (sizeof($featurelist)); $i++) {
-                        $query = 'SELECT mid, thumbnail, title FROM movies WHERE mid='.$featurelist[$i].';';
+                        $query = 'SELECT mid, thumbnail, title FROM movies WHERE mid=' . $featurelist[$i] . ';';
                         $result = $db->query($query);
                         $row = $result->fetch_assoc();
                         echo '<div class="feature-flex-item">

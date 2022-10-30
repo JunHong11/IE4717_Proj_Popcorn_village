@@ -116,7 +116,7 @@ footer {
 #contents {
 	min-height: calc(100vh - 115px);
 }
-a {
+#headflex a {
 	color: #e4e4e4;
 	text-decoration: none;
 }
