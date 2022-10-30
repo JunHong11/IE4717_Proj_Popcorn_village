@@ -1,16 +1,23 @@
 # IE4717_Proj_Popcorn_village
 
+to setup local mail (requires thunderbird, xampp mercury):
+
+1. click on admin for mercury's row
+2. add local user
+3. login on thunderbird
+
 setup local email for testing:
-|username |personal name |Password |
-|---------|--------------|---------|
-| popcorn | popcorn | popcorn |
-| village | village | village |
+|who |username |personal name |Password |
+|-----|---------|--------------|---------|
+| any | popcorn | popcorn | popcorn |
+| any | village | village | village |
+| us | popcorn_village | popcorn_village | village|
 
 setup local email for demo:
-|username |personal name |Password |
-|---------|--------------|---------|
-| demo | demo | demo |
-| village | village | village |
+|who |username |personal name |Password |
+|-----|---------|--------------|---------|
+| you | demo | demo | demo |
+| us | popcorn_village | popcorn_village | village |
 
 working accs with discounts and feature recommendation:
 | username | password |
