@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Popcorn Village Example2</title>
+    <title>Popcorn Village</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/layoutnavheadfoot.css">
     <link rel="stylesheet" href="css/movie_details.css">

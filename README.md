@@ -1,6 +1,6 @@
 # IE4717_Proj_Popcorn_village
 
-to setup local mail (requires thunderbird, xampp mercury):
+## to setup local mail (requires thunderbird, xampp mercury):
 
 1. click on admin for mercury's row
 2. add local user
@@ -19,12 +19,25 @@ setup local email for demo:
 | you | demo | demo | demo |
 | us | popcorn_village | popcorn_village | village |
 
+## importing database:
+
+Shortcut way:
+create database popcorn_village
+import popcorn_village.sql
+other way:
+import individual sql and csv
+
+## login/registering accounts
+
 working accs with discounts and feature recommendation:
 | username | password |
 | -------- | -------- |
 | test1 | P@ssw0rd |
 | user2 | P@ssw0rd |
 | demo1 | P@ssw0rd |
+
+
+## checkbooking mails
 
 you may use any of the emails created for testing checkbooking after u added orders
 currently available emails for check booking:
